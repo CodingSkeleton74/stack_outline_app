@@ -35,7 +35,7 @@ class History(db.Model):
     historyID = db.Column(db.String(30), primary_key=True)
     userID = db.Column(db.String(30), db.ForeignKey('user.userID'), nullable=False)
     reviewID = db.Column(db.String(30), db.ForeignKey('review.reviewID'), nullable=False)
-    historyTimestamp = db.Column(db.String(50), nullable=False)
+    historyTimestamp = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
         return f"<Category {self.historyTimestamp}>"
